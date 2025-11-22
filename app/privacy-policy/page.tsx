@@ -44,6 +44,60 @@ export default function PrivacyPolicyPage() {
           {t.legal.privacySecurityDesc}
         </p>
         
+        {t.legal.privacyCookiesTitle && (
+          <>
+            <h2 className="text-2xl font-semibold mt-8 mb-4">{t.legal.privacyCookiesTitle}</h2>
+            <p className="text-gray-700 mb-4">
+              {t.legal.privacyCookiesDesc}
+            </p>
+          </>
+        )}
+        
+        {t.legal.privacyThirdPartyTitle && (
+          <>
+            <h2 className="text-2xl font-semibold mt-8 mb-4">{t.legal.privacyThirdPartyTitle}</h2>
+            <p className="text-gray-700 mb-4">
+              {t.legal.privacyThirdPartyDesc}
+            </p>
+          </>
+        )}
+        
+        {t.legal.privacyUserRightsTitle && (
+          <>
+            <h2 className="text-2xl font-semibold mt-8 mb-4">{t.legal.privacyUserRightsTitle}</h2>
+            <p className="text-gray-700 mb-4">
+              {t.legal.privacyUserRightsDesc}
+            </p>
+          </>
+        )}
+        
+        {t.legal.privacyDataRetentionTitle && (
+          <>
+            <h2 className="text-2xl font-semibold mt-8 mb-4">{t.legal.privacyDataRetentionTitle}</h2>
+            <p className="text-gray-700 mb-4">
+              {t.legal.privacyDataRetentionDesc}
+            </p>
+          </>
+        )}
+        
+        {t.legal.privacyChildrenTitle && (
+          <>
+            <h2 className="text-2xl font-semibold mt-8 mb-4">{t.legal.privacyChildrenTitle}</h2>
+            <p className="text-gray-700 mb-4">
+              {t.legal.privacyChildrenDesc}
+            </p>
+          </>
+        )}
+        
+        {t.legal.privacyChangesTitle && (
+          <>
+            <h2 className="text-2xl font-semibold mt-8 mb-4">{t.legal.privacyChangesTitle}</h2>
+            <p className="text-gray-700 mb-4">
+              {t.legal.privacyChangesDesc}
+            </p>
+          </>
+        )}
+        
         <h2 className="text-2xl font-semibold mt-8 mb-4">{t.legal.privacyContactTitle}</h2>
         <p className="text-gray-700 mb-4">
           {t.legal.privacyContactDesc}
