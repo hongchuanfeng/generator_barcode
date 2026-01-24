@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import BarcodeGenerator from '@/components/BarcodeGenerator'
 import BulkBarcodeGenerator from '@/components/BulkBarcodeGenerator'
+import BarcodeRecognizer from '@/components/BarcodeRecognizer'
 import Features from '@/components/Features'
 import Help from '@/components/Help'
 import Examples from '@/components/Examples'
@@ -10,7 +11,7 @@ import Feedback from '@/components/Feedback'
 import { useLocale } from '@/contexts/LocaleContext'
 
 export default function Home() {
-  const [activeTab, setActiveTab] = useState<'single' | 'bulk'>('single')
+  const [activeTab, setActiveTab] = useState<'single' | 'bulk' | 'recognize'>('single')
   const { t } = useLocale()
 
   return (
@@ -49,10 +50,26 @@ export default function Home() {
           >
             {t.home.bulkBarcode}
           </button>
+          <button
+            onClick={() => setActiveTab('recognize')}
+            className={`px-8 py-3 rounded-xl font-semibold transition-all duration-300 ${
+              activeTab === 'recognize'
+                ? 'bg-gradient-to-r from-blue-500 to-purple-600 text-white shadow-lg scale-105'
+                : 'text-white/80 hover:text-white hover:bg-white/10'
+            }`}
+          >
+            {t.home.recognize || '识别条码'}
+          </button>
         </div>
       </div>
 
-      {activeTab === 'single' ? <BarcodeGenerator /> : <BulkBarcodeGenerator />}
+      {activeTab === 'single' ? (
+        <BarcodeGenerator />
+      ) : activeTab === 'bulk' ? (
+        <BulkBarcodeGenerator />
+      ) : (
+        <BarcodeRecognizer />
+      )}
 
       <Features />
       <Help />
@@ -61,4 +78,3 @@ export default function Home() {
     </div>
   )
 }
-
