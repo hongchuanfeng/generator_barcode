@@ -1,8 +1,14 @@
 import { useLocale } from '@/contexts/LocaleContext'
 
+type ExampleItem = {
+  type: string
+  data: string
+  description?: string
+}
+
 export default function Examples() {
   const { t } = useLocale()
-  const examples = t.examples.items
+  const examples = t.examples.items as ExampleItem[]
 
   return (
     <section className="py-12 bg-gray-50 rounded-lg my-8">
