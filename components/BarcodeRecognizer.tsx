@@ -145,7 +145,7 @@ export default function BarcodeRecognizer() {
           <div className="bg-gradient-to-br from-gray-50 to-white rounded-2xl p-6 border border-gray-100 shadow-sm h-full flex flex-col">
             <label className="block text-sm font-semibold text-gray-700 mb-3 flex items-center gap-2">
               <span className="text-lg">🔍</span>
-              {t?.home?.recognize || '识别条码'}
+              {home?.recognize || '识别条码'}
             </label>
 
             <div className="flex flex-col items-start gap-6 h-full">

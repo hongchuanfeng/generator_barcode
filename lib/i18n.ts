@@ -2,6 +2,28 @@ export type Locale = 'en' | 'zh' | 'es' | 'fr' | 'ar' | 'ru' | 'pt' | 'de' | 'ja
 
 export const locales: Locale[] = ['en', 'zh', 'es', 'fr', 'ar', 'ru', 'pt', 'de', 'ja']
 export const defaultLocale: Locale = 'en'
+export type RecognizerTranslations = {
+  uploadPrompt: string
+  uploadHint: string
+  previewPlaceholder: string
+  resultsTitle: string
+  noResults: string
+  browserNotSupport: string
+  browserSuggest: string
+  fallbackError: string
+  detectError: string
+  typeLabel: string
+  valueLabel: string
+}
+
+export type HomeTranslations = {
+  title: string
+  subtitle: string
+  singleBarcode: string
+  bulkBarcode: string
+  recognize?: string
+  recognizer?: RecognizerTranslations
+}
 
 export const translations = {
   en: {
@@ -5577,6 +5599,7 @@ export const translations = {
 }
 
 export function getTranslations(locale: Locale) {
-  return translations[locale] || translations[defaultLocale]
+  // 强类型返回：确保 callers 可以安全访问 t.home 的 recognizer 字段（如果存在）
+  return (translations[locale] || translations[defaultLocale]) as unknown as { home: HomeTranslations } & Record<string, any>
 }
 
