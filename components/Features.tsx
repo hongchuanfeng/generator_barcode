@@ -1,8 +1,14 @@
 import { useLocale } from '@/contexts/LocaleContext'
 
+type FeatureCard = {
+  icon: string
+  title: string
+  description: string
+}
+
 export default function Features() {
   const { t } = useLocale()
-  const features = t.features.cards
+  const features = t.features.cards as FeatureCard[]
 
   return (
     <section className="py-12 bg-gray-50 rounded-lg my-8">
