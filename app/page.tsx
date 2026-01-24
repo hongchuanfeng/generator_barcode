@@ -13,6 +13,7 @@ import { useLocale } from '@/contexts/LocaleContext'
 export default function Home() {
   const [activeTab, setActiveTab] = useState<'single' | 'bulk' | 'recognize'>('single')
   const { t } = useLocale()
+  const home = t.home as any
 
   return (
     <div className="container mx-auto px-4 py-8">
@@ -58,7 +59,7 @@ export default function Home() {
                 : 'text-white/80 hover:text-white hover:bg-white/10'
             }`}
           >
-            {t.home.recognize || '识别条码'}
+            {home.recognize || '识别条码'}
           </button>
         </div>
       </div>

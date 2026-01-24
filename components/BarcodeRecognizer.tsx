@@ -13,6 +13,7 @@ export default function BarcodeRecognizer() {
     upc_a: 'UPC-A',
   }
   const { t } = useLocale()
+  const home = t.home as any
   const [imageUrl, setImageUrl] = useState<string | null>(null)
   const [results, setResults] = useState<Array<{ format: string; value: string }>>([])
   const canvasRef = useRef<HTMLCanvasElement | null>(null)
@@ -136,7 +137,7 @@ export default function BarcodeRecognizer() {
           <span className="text-2xl">🔍</span>
         </div>
         <h2 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-          {t?.home?.recognize || '识别条码'}
+          {home?.recognize || '识别条码'}
         </h2>
       </div>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
@@ -159,8 +160,8 @@ export default function BarcodeRecognizer() {
                 <label htmlFor="barcode-recognizer-file" className="cursor-pointer inline-flex items-center gap-3 px-4 py-3 rounded-xl bg-white border shadow-sm">
                   <span className="text-2xl">📷</span>
                   <div className="flex flex-col text-left">
-                    <span className="text-sm font-medium text-gray-700">{t?.home?.recognizer?.uploadPrompt || '点击上传图片或拖拽'}</span>
-                    <span className="text-xs text-gray-500">{t?.home?.recognizer?.uploadHint || '支持 PNG/JPEG'}</span>
+                <span className="text-sm font-medium text-gray-700">{home?.recognizer?.uploadPrompt || '点击上传图片或拖拽'}</span>
+                <span className="text-xs text-gray-500">{home?.recognizer?.uploadHint || '支持 PNG/JPEG'}</span>
                   </div>
                 </label>
 
@@ -169,7 +170,7 @@ export default function BarcodeRecognizer() {
                 <canvas ref={canvasRef} className="w-full h-96 rounded-md border" />
               ) : (
                 <div className="w-full h-96 rounded-md bg-white/50 border flex items-center justify-center text-sm text-gray-500">
-                  {t?.home?.recognizer?.previewPlaceholder || '上传图片后会在此显示预览'}
+                      {home?.recognizer?.previewPlaceholder || '上传图片后会在此显示预览'}
                 </div>
               )}
                 </div>
@@ -180,14 +181,14 @@ export default function BarcodeRecognizer() {
 
         <div className="space-y-6">
           <div className="bg-white rounded-lg p-4 border h-full">
-            <h3 className="font-semibold mb-2">{t?.home?.recognizer?.resultsTitle || '识别结果'}</h3>
+            <h3 className="font-semibold mb-2">{home?.recognizer?.resultsTitle || '识别结果'}</h3>
             {results.length === 0 ? (
-              <p className="text-sm text-gray-500">{t?.home?.recognizer?.noResults || '暂无识别结果'}</p>
+              <p className="text-sm text-gray-500">{home?.recognizer?.noResults || '暂无识别结果'}</p>
             ) : (
               <ul className="space-y-2">
                 {results.map((r, idx) => (
                   <li key={idx} className="p-2 border rounded-md bg-gray-50">
-                    <div className="text-sm text-gray-600">{(t?.home?.recognizer?.typeLabel || '类型') + '：'}{r.format}</div>
+                    <div className="text-sm text-gray-600">{(home?.recognizer?.typeLabel || '类型') + '：'}{r.format}</div>
                     <div className="text-md font-mono break-all">{r.value}</div>
                   </li>
                 ))}
