@@ -70,6 +70,16 @@ export const translations = {
       intellectualProperty: 'Intellectual Property',
       contactTitle: 'Contact',
       addressDetail: '130 Longhua Avenue, Longhua District, Shenzhen, China',
+      friendlyLinksTitle: 'Friendly Links',
+      friendlyLinks: [
+        { name: 'Free Image Processing', url: 'https://mosaic.chdaoai.com/' },
+        { name: 'iceBreakGame', url: 'https://www.icebreakgame.com/' },
+        { name: 'Video Watermark Remover', url: 'https://www.removewatermarker.com/' },
+        { name: 'PDF Converter', url: 'https://pdf.chdaoai.com/' },
+        { name: 'Online QR Code Generator', url: 'https://qrcode.chdaoai.com/' },
+        { name: 'NBA Fun Facts', url: 'https://www.zorezoro.com/' },
+        { name: 'Video to Text', url: 'https://video2txt.zorezoro.com/' },
+      ],
     },
     features: {
       heading: 'Powerful Features',
@@ -703,6 +713,16 @@ export const translations = {
       intellectualProperty: '知识产权声明',
       contactTitle: '联系我们',
       addressDetail: '中国深圳市龙华区龙华大道130号',
+      friendlyLinksTitle: '友情链接',
+      friendlyLinks: [
+        { name: '免费图片处理', url: 'https://mosaic.chdaoai.com/' },
+        { name: 'iceBreakGame', url: 'https://www.icebreakgame.com/' },
+        { name: '视频去水印', url: 'https://www.removewatermarker.com/' },
+        { name: 'PDF转换工具', url: 'https://pdf.chdaoai.com/' },
+        { name: '在线生成二维码', url: 'https://qrcode.chdaoai.com/' },
+        { name: 'NBA趣事', url: 'https://www.zorezoro.com/' },
+        { name: '视频转文字', url: 'https://video2txt.zorezoro.com/' },
+      ],
     },
     features: {
       heading: '功能亮点',
